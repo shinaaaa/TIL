@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="hphk">Happy Hacking!</h1>
+    <h2 id="visitor"></h2>
+    <div>
+      <a href="#" id="who-button">who said what?</a>
+      <span id="answerer"></span>
+    </div>
+    <div>
+      <span id="counter">0</span><button id="counter-plus-button">PLUS</button>
+      <button id="counter-reset-button">RESET</button>
+    </div>
+    <script>
+      /*       alert("안녕");
+      const visitor = prompt("누구?");
+      const whoVisitor = document.querySelector("#visitor");
+      if (visitor === "나요") {
+        whoVisitor.innerHTML = visitor + " 어서오시오";
+      } else {
+        whoVisitor.innerHTML = visitor + " 꺼지시오";
+      }
+      const whoButton = document.querySelector("#who-button");
+      whoButton.addEventListener("click", function() {
+        document.querySelector("#answerer").innerHTML = visitor;
+      }); */
+      const counterPlusButton = document.querySelector("#counter-plus-button");
+      counterPlusButton.addEventListener("click", function() {
+        document.querySelector("#counter").innerHTML++;
+      });
+      const counterResetButton = document.querySelector(
+        "#counter-reset-button"
+      );
+      counterResetButton.addEventListener("click", function() {
+        document.querySelector("#counter").innerHTML = 0;
+      });
+    </script>
+  </body>
+</html>
