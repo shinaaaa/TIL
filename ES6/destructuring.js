@@ -16,3 +16,5 @@ const labtop = {
     price: 100
 };
 const { model, year, price } = labtop;
+
+//ES5

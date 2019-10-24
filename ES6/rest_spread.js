@@ -24,3 +24,8 @@ function logging(a, b) {
     console.log(rest);
 }
 logging(1, 2, 3, 4, 5, 6, 7);
+
+const sample = [340, 200, 1, 2, 3, 4, 5];
+[, , ...whatIneed] = sample;
+console.log(whatIneed);
+
