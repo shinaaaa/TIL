@@ -4,7 +4,6 @@ import './Forecast.css'
 
 const Forecast = ({ forecast, unit }) => {
     const cut = forecast.list.slice(0, 10);
-    console.log(cut);
 
     const getHoursName = h => {
         return h > 12 ? `오후 ${h - 12} 시` : `오전 ${h} 시`
@@ -15,15 +14,21 @@ const Forecast = ({ forecast, unit }) => {
             기온: unit === 'c' ? Math.round(e.main.temp) : Math.round((e.main.temp * 9) / 5 + 32)
         }
     })
+    const resposiveWidth = () => {
+        const maxWidth = 500;
+        const width = window.innerWidth - 10;
+        return width > maxWidth ? maxWidth : width;
+    };
+
     return (
-        <div className='forecast'>
-            <LineChart width={500} height={200} data={data}>
-                <Line type='monotone' dataKey='기온' />
-                <XAxis dataKey='time' />
-                <YAxis domain={['dataMin-1', 'datMax+1']} />
+        <div className="forecast">
+            <LineChart width={resposiveWidth()} height={200} data={data}>
+                <Line type="monotone" dataKey="기온"></Line>
+                <XAxis dataKey="time" />
+                <YAxis domain={["dataMin-1", "dataMax-1"]} />
                 <Tooltip />
-                <Legend />
-            </LineChart >
+                <Legend></Legend>
+            </LineChart>
         </div>
     );
 };
